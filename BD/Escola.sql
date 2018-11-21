@@ -1,10 +1,25 @@
 
+PRAGMA foreign_keys = OFF;
+
+-- Schema: Escola
+ATTACH "Escola.sdb" AS "Escola";
 BEGIN;
 CREATE TABLE "Escola"."Responsavel"(
   "id" INTEGER PRIMARY KEY NOT NULL,
   "nome" VARCHAR(65) NOT NULL,
   "telefone" VARCHAR(11) NOT NULL
 );
+
+CREATE TABLE "Escola"."Curso"(
+  "id" INTEGER PRIMARY KEY NOT NULL,
+  "nome" VARCHAR(40) NOT NULL,
+  "cargaHoraria" INTEGER NOT NULL,
+  "coordenador" INTEGER NOT NULL,
+  CONSTRAINT "fk_Cursos_Professor1"
+    FOREIGN KEY("coordenador")
+    REFERENCES "Professor"("registro")
+);
+
 CREATE TABLE "Escola"."AreaAtuacao"(
   "id" INTEGER PRIMARY KEY NOT NULL,
   "nome" VARCHAR(45) NOT NULL
@@ -30,15 +45,6 @@ CREATE TABLE "Escola"."Turma"(
     REFERENCES "Curso"("id")
 );
 CREATE INDEX "Escola"."Turma.fk_Turma_Cursos1_idx" ON "Turma" ("curso");
-CREATE TABLE "Escola"."Curso"(
-  "id" INTEGER PRIMARY KEY NOT NULL,
-  "nome" VARCHAR(40) NOT NULL,
-  "cargaHoraria" INTEGER NOT NULL DEFAULT CHECK(cargaHoraria > 0),
-  "coordenador" INTEGER NOT NULL CHECK("coordenador">=0),
-  CONSTRAINT "fk_Cursos_Professor1"
-    FOREIGN KEY("coordenador")
-    REFERENCES "Professor"("registro")
-);
 CREATE INDEX "Escola"."Curso.fk_Cursos_Professor1_idx" ON "Curso" ("coordenador");
 CREATE TABLE "Escola"."Aluno"(
   "matricula" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
