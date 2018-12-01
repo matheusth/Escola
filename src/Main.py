@@ -1,5 +1,8 @@
 from Responsavel import Responsavel
 from Aluno import Aluno
+from Professor import Professor
+from Turma import Turma
+from Curso import Curso
 
 responsavel1 = Responsavel(nome="Responsavel1",
                            endereco="Av. Teste",
