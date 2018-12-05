@@ -5,7 +5,7 @@ from src.Pessoa import Pessoa
 class Aluno(Pessoa):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.__matricula = kwargs['matricula']
+        self.__matricula = 0
         self.__responsavel = Responsavel(**kwargs)
 
     @property
@@ -30,6 +30,7 @@ class Aluno(Pessoa):
         cursor = conn.cursor()
         cursor.execute("""insert into Aluno(nome, email, endereco, responsavel) 
                 values (?,?,?,?)""", (self.nome,self.email,self.endereco,respId[0]))
+        self.matricula = cursor.lastrowid
         conn.commit()
         cursor.close()
         conn.close()

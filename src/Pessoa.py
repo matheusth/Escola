@@ -1,4 +1,4 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC
 class Pessoa(ABC):
     def __init__(self, **kwargs):
         self.__nome = kwargs['nome']

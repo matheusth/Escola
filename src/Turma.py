@@ -1,6 +1,6 @@
 import sqlite3
 
-from src import Aluno
+from src.Aluno import Aluno
 
 
 class Turma():
@@ -33,7 +33,7 @@ class Turma():
         if(self.obterQntAlunos() < 15):
             conn = sqlite3.connect("../BD/Escola.sdb")
             cursor = conn.cursor()
-            cursor.execute("update aluno set turma=? where matricula=?",self.__id,matricula)
+            cursor.execute("update aluno set turma="+str(self.__id)+" where matricula="+str(matricula))
             conn.commit()
             cursor.close()
             conn.close()
@@ -45,24 +45,24 @@ class Turma():
         cursor = conn.cursor()
         cursor.execute("""select matricula,A.nome,endereco,email,R.nome,R.telefone from Aluno A
                        INNER JOIN Responsavel R on 
-                       Aluno.responsavel = R.id where turma=?""",
-                       self.__id)
+                       A.responsavel = R.id where turma="""+str(self.__id))
         rows = cursor.fetchall()
         self.__alunos.clear()
         for row in rows:
             self.__alunos.append(Aluno(matricula=row[0],nome=row[1],
                                        endereco=row[2],email=row[3], nomeR=row[4],
                                        telefone=row[5]))
-        conn.close()
         cursor.close()
+        conn.close()
+
         return self.__alunos
 
     def obterQntAlunos(self):
         return len(self.listarAlunos())
 
     def salvar(self,idCurso):
-        conn = sqlite3.connect("../BD/Escola.sdb");
-        cursor = conn.cursor();
+        conn = sqlite3.connect("../BD/Escola.sdb")
+        cursor = conn.cursor()
         cursor.execute("""insert into Turma(nome, inicioEm, curso) 
                 values (?,?,?)""", (self.nome, self.anoInicio, idCurso))
         conn.commit()

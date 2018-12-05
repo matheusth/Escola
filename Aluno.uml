@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Aluno</OriginalElement>
+  <nodes>
+    <node x="29.5" y="428.0">cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Turma</node>
+    <node x="241.5" y="440.0">cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Responsavel</node>
+    <node x="0.0" y="0.0">cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Professor</node>
+    <node x="16.0" y="250.0">cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Curso</node>
+    <node x="125.75000000000001" y="606.0">cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Aluno</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Aluno" target="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Responsavel">
+      <point x="55.75" y="-88.0" />
+      <point x="293.0" y="581.0" />
+      <point x="349.0" y="581.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Turma" target="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Curso">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+    <edge source="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Curso" target="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Professor">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="100.0" />
+    </edge>
+    <edge source="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Aluno" target="cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Turma">
+      <point x="-55.75" y="-88.0" />
+      <point x="181.5" y="581.0" />
+      <point x="125.5" y="581.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4389027431421446" x="228.5" y="391.0" />
+  <SelectedNodes>
+    <node>cdc8e342-74c4-4cb9-a5ec-6c1a33e5feed.TABLE:main.Aluno</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

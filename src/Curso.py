@@ -97,12 +97,13 @@ class Curso():
         ,P.email,P.areaAtuacao,P.qntAulas, P.registro, P.endereco from Curso C 
         INNER JOIN Professor P on C.coordenador = P.registro""")
         rows = cursor.fetchall()
-        conn.close()
         cursor.close()
+        conn.close()
+
         cursos = []
         for row in rows:
             coor = Professor(registro=row[7],nome=row[2],telefone=row[3],
                              email=row[4],atuacao=row[5]
                              ,qntAulas=row[6],endereco=row[8])
-            cursos.append(Curso(nome = row[0],cargaHoraria=row[1],coordenador=coor))
+            cursos.append(Curso(nome=row[0],cargaHoraria=row[1],coordenador=coor))
         return cursos
