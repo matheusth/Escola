@@ -1,4 +1,4 @@
-from Pessoa import Pessoa
+from src.Pessoa import Pessoa
 
 class Professor(Pessoa):
     def __init__(self, **kwargs):
@@ -6,6 +6,7 @@ class Professor(Pessoa):
         self.__registro = kwargs['registro']
         self.__telefone = kwargs['telefone']
         self.__atuacao = kwargs['atuacao']
+        self.__qntAula = kwargs['qntAulas']
 
     @property
     def registro(self):

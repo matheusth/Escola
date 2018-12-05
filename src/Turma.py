@@ -3,6 +3,7 @@ class Turma():
     def __init__(self, **kwargs):
         self.__nome = kwargs['nome']
         self.__anoInicio = kwargs['anoInicio']
+        self.__aluno = list()
 
     @property
     def nome(self):

@@ -1,5 +1,5 @@
-from Professor import Professor
-from Turma import Turma
+from src.Professor import Professor
+from src.Turma import Turma
 
 class Curso():
     def __init__(self, **kwargs):

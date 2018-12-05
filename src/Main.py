@@ -17,11 +17,7 @@ print(responsavel1.id)
 print(responsavel1.telefone)
 print()
 print()
-responsavel2 = Responsavel(nome="Responsavel2",
-                           endereco="Av. Brasil",
-                           email="teste@gmail.com",
-                           id=56,
-                           telefone="62 98765 - 4321")
+
 
 print(responsavel2.nome)
 print(responsavel2.endereco)

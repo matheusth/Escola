@@ -5,7 +5,7 @@ class Aluno(Pessoa):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.__matricula = kwargs['matricula']
-        self.__responsavel = kwargs['responsavel']
+        self.__responsavel = Responsavel(**kwargs)
 
     @property
     def matricula(self):
